@@ -39,7 +39,7 @@ Follow the support documentation offered by HPE Aruba AOS-CX CLI to setup forwar
 Below are the fields from the different event types and their mapping into ECS supported fields or customer Aruba fields
 
 To Be Removed
-Note: Field types are defined within `fields.yml` and `ecs.yml`
+Note: Field types are defined within `fields.yml`
 Note: Descriptions have not been filled out
 
 #### [AAA events](https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-8214/Content/events/AAA.htm)
@@ -112,7 +112,7 @@ Note: Descriptions have not been filled out
 | aruba.bgp.as_number          |             |      | client.as.number             |
 | aruba.bgp.id                 |             |      |                              |
 | aruba.bgp.error-code         |             |      | error.code                   |
-| aruba.bgp.error-subcode      |             |      | error.sub_code               |
+| aruba.bgp.error-subcode      |             |      |                              |
 | aruba.bgp.local_as           |             |      | client.as.number             |
 | aruba.bgp.pg_name            |             |      |                              |
 | aruba.bgp.remote-addr        |             |      | destination.address          |
@@ -217,7 +217,7 @@ Note: Descriptions have not been filled out
 | aruba.dhcp.server_ip_address |         |      | server.address     |
 | aruba.dhcp.source_mac    |             |      | client.mac         |
 | aruba.dhcp.vid           |             |      | network.vlan.id    |
-| aruba.dhcp.volume_name   |             |      | volume.mount_name  |
+| aruba.dhcp.volume_name   |             |      |                    |
 
 #### [DHCPv6 Relay events](https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-8214/Content/events/DHCPv6-RELAY.htm)
 | Field | Description | Type | Common |
@@ -234,7 +234,7 @@ Note: Descriptions have not been filled out
 | aruba.dhcp.new_port      |             |      |                    |
 | aruba.dhcp.port          |             |      | server.port        |
 | aruba.dhcp.vid           |             |      | network.vlan.id    |
-| aruba.dhcp.volume_name   |             |      | volume.mount_name  |
+| aruba.dhcp.volume_name   |             |      |                    |
 
 #### [Discovery and Capability Exchange (DCBx) events](https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-8214/Content/events/DCBX.htm)
 | Field                | Description | Type | Common                          |
@@ -257,7 +257,7 @@ Note: Descriptions have not been filled out
 |---------------------|-------------|------|------------------------------|
 | aruba.ecmp.egressid |             |      | observer.egress.interface.id |
 | aruba.ecmp.err      |             |      | error.message                |
-| aruba.ecmp.route    |             |      | network.route                |
+| aruba.ecmp.route    |             |      |                              |
 
 #### [ERPS events](https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-8214/Content/events/ERPS.htm)
 | Field                | Description | Type | Common                       |
@@ -271,7 +271,7 @@ Note: Descriptions have not been filled out
 | aruba.erps.portName  |             |      | client.port                  |
 | aruba.erps.reason    |             |      | event.reason                 |
 | aruba.erps.ring_id   |             |      |                              |
-| aruba.erps.state     |             |      | event.state                  |
+| aruba.erps.state     |             |      | aruba.status                 |
 | aruba.erps.vland_id  |             |      | network.vlan.id              |
 
 #### [EVPN events](https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-8214/Content/events/EVPN.htm)
@@ -290,7 +290,7 @@ Note: Descriptions have not been filled out
 #### [External Storage events](https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-8214/Content/events/EXTERNAL-STORAGE.htm)
 | Field                | Description | Type | Common             |
 |----------------------|-------------|------|--------------------|
-| aruba.storage.name   |             |      | volume.mount_name  |
+| aruba.storage.name   |             |      |                    |
 | aruba.storage.status |             |      | aruba.status       |
 
 #### [Fan events](https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-8214/Content/events/FAN.htm)
@@ -1265,5 +1265,189 @@ Note: Descriptions have not been filled out
 | aruba.zero_touch.image_file        |             |      | file.name                    |
 | aruba.zero_touch.tftp_ip           |             |      | destination.ip               |
 
+## Generated Logs
 
+The `log` dataset collects the HPE Aruba CX logs.
 
+**Exported fields**
+
+| Field | Description | Type |
+|---|---|---|
+| @timestamp | Event timestamp. | date |
+| aruba.acl.ace_string | TBD for all description fields - need to be filled in | keyword |
+| aruba.acl.application |  | keyword |
+| aruba.acl.hit_delta |  | long |
+| aruba.acl.name |  | keyword |
+| aruba.acl.type |  | keyword |
+| aruba.bfd.applied_interval |  | long |
+| aruba.bfd.invalid_ip |  | ip |
+| aruba.bfd.ip_version |  | keyword |
+| aruba.bfd.local_diag |  | keyword |
+| aruba.bfd.local_state |  | keyword |
+| aruba.bfd.op_mode |  | keyword |
+| aruba.bfd.remote_diag |  | keyword |
+| aruba.bfd.remote_state |  | keyword |
+| aruba.bfd.requested_interval |  | keyword |
+| aruba.bgp.error-subcode |  | keyword |
+| aruba.bgp.id |  | keyword |
+| aruba.bgp.pg_name |  | keyword |
+| aruba.bgp.threshold_limit |  | long |
+| aruba.bgp.vtep_ip |  | ip |
+| aruba.cm.cert_name |  | keyword |
+| aruba.cm.days |  | long |
+| aruba.cm.est_name |  | keyword |
+| aruba.cm.profile_name |  | keyword |
+| aruba.config.type |  | keyword |
+| aruba.config.value |  | keyword |
+| aruba.copp.class |  | keyword |
+| aruba.cpu_rx.filter_description |  | keyword |
+| aruba.dhcp.config |  | keyword |
+| aruba.dhcp.ipv6_address |  | keyword |
+| aruba.dhcp.lease_ip_address |  | ip |
+| aruba.dhcp.new_port |  | long |
+| aruba.dhcp.server_ip_address |  | ip |
+| aruba.dhcp.source_mac |  | keyword |
+| aruba.dhcp.volume_name |  | keyword |
+| aruba.dns.type |  | keyword |
+| aruba.dpse.linecard_name |  | keyword |
+| aruba.ecmp.route |  | keyword |
+| aruba.erps.ring_id |  | keyword |
+| aruba.evpn.rd |  | keyword |
+| aruba.evpn.rt |  | keyword |
+| aruba.evpn.vni |  | keyword |
+| aruba.evpn.vtep_ip |  | ip |
+| aruba.fan.air_flow_direction |  | keyword |
+| aruba.fan.compare_mode |  | keyword |
+| aruba.fan.en_dis |  | keyword |
+| aruba.fan.fan_index |  | long |
+| aruba.fan.fmod_num |  | long |
+| aruba.fan.ft_air_curr |  | keyword |
+| aruba.fan.ft_air_req |  | keyword |
+| aruba.fan.ft_dir |  | keyword |
+| aruba.fan.ft_num |  | long |
+| aruba.fan.function |  | keyword |
+| aruba.fan.minimum |  | long |
+| aruba.fan.module_idx |  | keyword |
+| aruba.fan.name |  | keyword |
+| aruba.fan.new_status |  | keyword |
+| aruba.fan.old_status |  | keyword |
+| aruba.fan.speed_idx_status |  | keyword |
+| aruba.fan.speedval |  | long |
+| aruba.fan.tray_index |  | long |
+| aruba.fan.zone_idx |  | keyword |
+| aruba.firmware.dnld_type |  | keyword |
+| aruba.firmware.image_profile |  | keyword |
+| aruba.hardware.addr |  | keyword |
+| aruba.hardware.bus |  | keyword |
+| aruba.hardware.cap |  | keyword |
+| aruba.hardware.channel |  | keyword |
+| aruba.hardware.cpus |  | long |
+| aruba.hardware.device |  | keyword |
+| aruba.hardware.function |  | keyword |
+| aruba.hardware.ip |  | ip |
+| aruba.hardware.level |  | keyword |
+| aruba.hardware.location |  | keyword |
+| aruba.hardware.mcgstatus |  | keyword |
+| aruba.hardware.misc |  | keyword |
+| aruba.hardware.offlined |  | long |
+| aruba.hardware.origin |  | keyword |
+| aruba.hardware.page |  | keyword |
+| aruba.hardware.seg |  | keyword |
+| aruba.hardware.socket |  | keyword |
+| aruba.hardware.test_name |  | keyword |
+| aruba.hardware.type |  | keyword |
+| aruba.hardware.vni |  | keyword |
+| aruba.instance.id |  | keyword |
+| aruba.ip_sla.name |  | keyword |
+| aruba.l3.encaps_allocated |  | keyword |
+| aruba.l3.encaps_free |  | keyword |
+| aruba.lacp.actor_state |  | keyword |
+| aruba.lacp.fallback |  | keyword |
+| aruba.lacp.fsm_state |  | keyword |
+| aruba.lacp.lacp_fallback_mode |  | keyword |
+| aruba.lacp.lacp_mode |  | keyword |
+| aruba.lacp.lacp_rate |  | long |
+| aruba.lacp.lag_number |  | long |
+| aruba.lacp.lag_speed |  | long |
+| aruba.lacp.mode |  | keyword |
+| aruba.lacp.partner_state |  | keyword |
+| aruba.lacp.partner_sys_id |  | long |
+| aruba.lacp.port_speed |  | long |
+| aruba.lacp.system_id |  | long |
+| aruba.lacp.system_priority |  | keyword |
+| aruba.lag.actor_state |  | keyword |
+| aruba.lag.fallback |  | keyword |
+| aruba.lag.fsm_state |  | keyword |
+| aruba.lag.lacp_fallback_mode |  | keyword |
+| aruba.lag.lacp_mode |  | keyword |
+| aruba.lag.lacp_rate |  | long |
+| aruba.lag.lag_number |  | long |
+| aruba.lag.lag_speed |  | long |
+| aruba.lag.mode |  | keyword |
+| aruba.lag.partner_state |  | keyword |
+| aruba.lag.partner_sys_id |  | long |
+| aruba.lag.port_speed |  | long |
+| aruba.lag.system_id |  | long |
+| aruba.lag.system_priority |  | keyword |
+| aruba.len |  | long |
+| aruba.limit |  | long |
+| aruba.lldp.ninterface |  | keyword |
+| aruba.lldp.npvid |  | long |
+| aruba.lldp.reinit_delay |  | long |
+| aruba.lldp.tx_delay |  | long |
+| aruba.lldp.tx_hold |  | long |
+| aruba.lldp.tx_timer |  | long |
+| aruba.loop.rx_port |  | long |
+| aruba.loop.tx_port |  | long |
+| aruba.mac.ckn |  | keyword |
+| aruba.mac.latest_an |  | keyword |
+| aruba.mac.latest_kn |  | keyword |
+| aruba.mac.new_mode |  | keyword |
+| aruba.mac.old_an |  | keyword |
+| aruba.mac.old_kn |  | keyword |
+| aruba.mac.old_mode |  | keyword |
+| aruba.mac.sci |  | keyword |
+| aruba.management.config_param |  | keyword |
+| aruba.mgmd.l3Port |  | long |
+| aruba.mgmd.pkt_type |  | keyword |
+| aruba.mstp.config_parameter |  | keyword |
+| aruba.mstp.config_value |  | keyword |
+| aruba.mstp.new_mode |  | keyword |
+| aruba.mstp.old_mac |  | keyword |
+| aruba.mstp.old_mode |  | keyword |
+| aruba.mstp.old_priority |  | keyword |
+| aruba.mstp.pk_type |  | keyword |
+| aruba.mstp.proto |  | keyword |
+| aruba.mstp.psc |  | keyword |
+| aruba.mstp.reconfig_parameter |  | keyword |
+| aruba.mtu |  | keyword |
+| aruba.nae.action_type |  | keyword |
+| aruba.nae.condition |  | keyword |
+| aruba.nae.description |  | keyword |
+| aruba.nae.monitorName |  | keyword |
+| aruba.nd.type |  | keyword |
+| aruba.ndm.new_mac |  | keyword |
+| aruba.ndm.old_mac |  | keyword |
+| aruba.ndm.role1 |  | keyword |
+| aruba.ndm.role2 |  | keyword |
+| aruba.prefix |  | keyword |
+| aruba.server.sessions |  | keyword |
+| aruba.server.timeout |  | long |
+| aruba.slot |  | long |
+| aruba.status |  | keyword |
+| aruba.storage.name |  | keyword |
+| aruba.storage.usage |  | keyword |
+| aruba.system.devicespec |  | keyword |
+| aruba.system.modspec |  | keyword |
+| aruba.system.numdevs |  | long |
+| aruba.system.time |  | date |
+| aruba.tunnel.ttl |  | keyword |
+| aruba.tunnel.type |  | keyword |
+| aruba.vrf.id |  | long |
+| aruba.vrf.name |  | keyword |
+| aruba.zero_touch.central_location |  | keyword |
+| aruba.zero_touch.http_proxy_location |  | keyword |
+| aruba.zero_touch.image_file |  | keyword |
+| data_stream.dataset | Data stream dataset. | constant_keyword |
+| data_stream.namespace | Data stream namespace. | constant_keyword |
+| data_stream.type | Data stream type. | constant_keyword |
