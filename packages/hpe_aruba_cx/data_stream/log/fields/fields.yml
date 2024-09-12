@@ -71,6 +71,10 @@
           type: keyword
           description: >
 
+        - name: error-subcode
+          type: keyword
+          description: >
+
         - name: pg_name
           type: keyword
           description: >
@@ -462,7 +466,7 @@
           type: keyword
           description: >
 
-  - name: lag
+    - name: lag
       type: group
       fields:
         - name: actor_state
@@ -626,98 +630,7 @@
     - name: limit
       type: long
       description: >
-
-    - name: lldp
-      type: group
-      fields:
-        - name: ninterface
-          type: keyword
-          description: >
           
-        - name: npvid
-          type: long
-          description: >
-          
-        - name: reinit_delay
-          type: long
-          description: >
-          
-        - name: tx_delay
-          type: long
-          description: >
-          
-        - name: tx_hold
-          type: long
-          description: >
-          
-        - name: tx_timer
-          type: long
-          description: >
-          
-    - name: loop
-      type: group
-      fields:
-        - name: rx_port
-          type: long
-          description: >
-          
-        - name: tx_port
-          type: long
-          description: >
-          
-    - name: mac
-      type: group
-      fields:
-        - name: ckn
-          type: keyword
-          description: >
-          
-        - name: latest_an
-          type: keyword
-          description: >
-          
-        - name: latest_kn
-          type: keyword
-          description: >
-          
-        - name: new_mode
-          type: keyword
-          description: >
-          
-        - name: old_an
-          type: keyword
-          description: >
-          
-        - name: old_kn
-          type: keyword
-          description: >
-          
-        - name: old_mode
-          type: keyword
-          description: >
-          
-        - name: sci
-          type: keyword
-          description: >
-          
-    - name: management
-      type: group
-      fields:
-        - name: config_param
-          type: keyword
-          description: >
-          
-    - name: mgmd
-      type: group
-      fields:
-        - name: l3Port
-          type: long
-          description: >
-
-        - name: pkt_type
-          type: keyword
-          description: >
-
     - name: mstp
       type: group
       fields:
@@ -761,7 +674,7 @@
       type: keyword
       description: >
 
-  - name: nae
+    - name: nae
       type: group
       fields:
         - name: action_type
