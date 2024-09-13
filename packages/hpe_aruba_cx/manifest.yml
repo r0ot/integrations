@@ -1,4 +1,4 @@
-format_version: 3.1.2
+format_version: 3.2.1
 name: hpe_aruba_cx
 title: "HPE Aruba CX"
 version: 0.1.0
@@ -7,9 +7,10 @@ type: integration
 categories:
   - config_management
   - network
+  - security
 conditions:
   kibana:
-    version: "^8.13.3"
+    version: "^8.15.0"
   elastic:
     subscription: "basic"
 screenshots:
@@ -23,7 +24,7 @@ icons:
     size: 800x800
     type: image/svg+xml
 policy_templates:
-  - name: hpe_aruba_cx
+  - name: log
     title: HPE Aruba CX logs
     description: Collect HPE Aruba CX logs
     inputs:
