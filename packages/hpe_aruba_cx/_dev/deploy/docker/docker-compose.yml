@@ -1,15 +1,7 @@
-# Docker Compose Configuration File
-#
-# This file defines the services and their configurations for the HPE Aruba CX integration.
-
-version: '3.8'
-
 services:
-  # Add your services here
-
-networks:
-  # Add your networks here
-
-volumes:
-  # Add your volumes here
-  
+  aruba-tcp:
+    image: docker.elastic.co/observability/stream:v0.15.0
+    volumes:
+      - ./sample_syslog:/sample_logs:ro
+      - ${SERVICE_LOGS_DIR}:/var/log
+    command: log --start-signal=SIGHUP --delay=5s --addr elastic-agent:9030 -p=tcp /sample_logs/*.log
