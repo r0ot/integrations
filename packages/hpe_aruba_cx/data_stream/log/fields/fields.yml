@@ -787,7 +787,7 @@
       type: group
       fields:
         - name: id
-          type: long
+          type: keyword
           description: >
           
         - name: name
