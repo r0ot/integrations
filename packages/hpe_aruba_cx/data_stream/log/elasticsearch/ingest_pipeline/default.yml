@@ -1,11 +1,14 @@
 ---
-description: Pipeline for processing sample logs
+description: Pipeline for processing sample logs.
+
 processors:
   - set:
       field: event.original
       copy_from: message
+      override: false
   - remove:
       field: message
+      ignore_missing: true
   - set:
       field: ecs.version
       value: '8.11.0'
@@ -15,7 +18,7 @@ processors:
   # TBD
   #
 
-  on_failure:
+on_failure:
   - set:
       field: event.kind
       value: pipeline_error
