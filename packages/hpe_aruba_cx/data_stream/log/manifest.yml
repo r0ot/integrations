@@ -31,27 +31,6 @@ streams:
         default:
           - aruba-cx-log
           - forwarded
-      - name: internal_interfaces
-        type: text
-        title: Internal Interfaces
-        multi: true
-        required: false
-        show_user: false
-      - name: external_interfaces
-        type: text
-        title: External Interfaces
-        multi: true
-        required: false
-        show_user: false
-      - name: internal_networks
-        type: text
-        title: Internal Networks
-        description: List of internal networks. Supports IPv4 and IPv6 addresses and ranges in CIDR notation. Also supports the named ranges listed [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/network-direction-processor.html#supported-named-network-ranges).
-        multi: true
-        required: false
-        show_user: false
-        default:
-          - private
       - name: preserve_original_event
         required: true
         show_user: true
@@ -166,4 +145,42 @@ streams:
         show_user: false
         description: >
           Processors are used to reduce the number of fields in the exported event or to enhance the event with metadata. This executes in the agent before the logs are parsed. See [Processors](https://www.elastic.co/guide/en/beats/filebeat/current/filtering-and-enhancing-data.html) for details.
-
+  - input: filestream
+    template_path: filestream.yml.hbs
+    title: Aruba CX logs (filestream)
+    description: Collect Aruba logs using the filestream input
+    enabled: false
+    vars:
+      - name: paths
+        type: text
+        title: Paths
+        multi: true
+        required: true
+        show_user: true
+        default:
+          - /var/log/audit/*.log
+      - name: tags
+        type: text
+        title: Tags
+        multi: true
+        required: true
+        show_user: false
+        default:
+          - aruba-log
+          - forwarded
+      - name: preserve_original_event
+        required: true
+        show_user: true
+        title: Preserve original event
+        description: Preserves a raw copy of the original event, added to the field `event.original`
+        type: bool
+        multi: false
+        default: false
+      - name: processors
+        type: yaml
+        title: Processors
+        multi: false
+        required: false
+        show_user: false
+        description: >-
+          Processors are used to reduce the number of fields in the exported event or to enhance the event with metadata. This executes in the agent before the logs are parsed. See [Processors](https://www.elastic.co/guide/en/beats/filebeat/current/filtering-and-enhancing-data.html) for details.

@@ -34,6 +34,9 @@ policy_templates:
       - type: udp
         title: Collect logs from HPE Aruba CX via UDP
         description: Collecting logs from HPE Aruba CX via UDP
+      - type: filestream
+        title: Collect logs from HPE Aruba CX via file
+        description: Collect logs from HPE Aruba CX instances using filestream input.
 owner:
   github: elastic/sec-deployment-and-devices
   type: elastic
