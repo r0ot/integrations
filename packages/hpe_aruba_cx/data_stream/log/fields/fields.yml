@@ -8,802 +8,629 @@
           type: keyword
           description: >-
             TBD for all description fields - need to be filled in
-
         - name: application
           type: keyword
-          description: >
-
+          description: ""
         - name: hit_delta
           type: long
-          description: >
-
+          description: ""
         - name: name
           type: keyword
-          description: >
-
+          description: ""
         - name: type
           type: keyword
-          description: >
-
+          description: ""
     - name: bfd
       type: group
       fields:
         - name: applied_interval
           type: long
-          description: >
-
+          description: ""
         - name: invalid_ip
           type: ip
-          description: >
-
+          description: ""
         - name: ip_version
           type: keyword
-          description: >
-
+          description: ""
         - name: local_diag
           type: keyword
-          description: >
-
+          description: ""
         - name: local_state
           type: keyword
-          description: >
-
+          description: ""
         - name: op_mode
           type: keyword
-          description: >
-
+          description: ""
         - name: remote_diag
           type: keyword
-          description: >
-
+          description: ""
         - name: remote_state
           type: keyword
-          description: >
-
+          description: ""
         - name: requested_interval
           type: keyword
-          description: >
-
+          description: ""
     - name: bgp
       type: group
       fields:
         - name: id
           type: keyword
-          description: >
-
+          description: ""
         - name: error-subcode
           type: keyword
-          description: >
-
+          description: ""
         - name: pg_name
           type: keyword
-          description: >
-
+          description: ""
         - name: threshold_limit
           type: long
-          description: >
-
+          description: ""
         - name: vtep_ip
           type: ip
-          description: >
-
+          description: ""
     - name: cm
       type: group
       fields:
         - name: cert_name
           type: keyword
-          description: >
-
+          description: ""
         - name: days
           type: long
-          description: >
-
+          description: ""
         - name: est_name
           type: keyword
-          description: >
-
+          description: ""
         - name: profile_name
           type: keyword
-          description: >
-
+          description: ""
     - name: config
       type: group
       fields:
         - name: type
           type: keyword
-          description: >
-
+          description: ""
         - name: value
           type: keyword
-          description: >
-
+          description: ""
     - name: copp
       type: group
       fields:
         - name: class
           type: keyword
-          description: >
-
+          description: ""
     - name: cpu_rx
       type: group
       fields:
         - name: filter_description
           type: keyword
-          description: >
-
+          description: ""
     - name: dhcp
       type: group
       fields:
         - name: config
           type: keyword
-          description: >
-
+          description: ""
         - name: ipv6_address
           type: keyword
-          description: >
-
+          description: ""
         - name: lease_ip_address
           type: ip
-          description: >
-
+          description: ""
         - name: new_port
           type: long
-          description: >
-
+          description: ""
         - name: server_ip_address
           type: ip
-          description: >
-
+          description: ""
         - name: source_mac
           type: keyword
-          description: >
-
+          description: ""
         - name: volume_name
           type: keyword
-          description: >
-
+          description: ""
     - name: dns
       type: group
       fields:
         - name: type
           type: keyword
-          description: >
-
+          description: ""
     - name: dpse
       type: group
       fields:
         - name: linecard_name
           type: keyword
-          description: >
-
+          description: ""
     - name: ecmp
       type: group
       fields:
         - name: route
           type: keyword
-          description: >
-
+          description: ""
     - name: erps
       type: group
       fields:
         - name: ring_id
           type: keyword
-          description: >
-
+          description: ""
     - name: evpn
       type: group
       fields:
         - name: rd
           type: keyword
-          description: >
-
+          description: ""
         - name: rt
           type: keyword
-          description: >
-
+          description: ""
         - name: vni
           type: keyword
-          description: >
-
+          description: ""
         - name: vtep_ip
           type: ip
-          description: >
-
+          description: ""
     - name: fan
       type: group
       fields:
         - name: compare_mode
           type: keyword
-          description: >
-
+          description: ""
         - name: en_dis
           type: keyword
-          description: >
-
+          description: ""
         - name: fan_index
           type: long
-          description: >
-
+          description: ""
         - name: fmod_num
           type: long
-          description: >
-
+          description: ""
         - name: ft_air_curr
           type: keyword
-          description: >
-
+          description: ""
         - name: ft_air_req
           type: keyword
-          description: >
-
+          description: ""
         - name: ft_dir
           type: keyword
-          description: >
-
+          description: ""
         - name: ft_num
           type: long
-          description: >
-
+          description: ""
         - name: function
           type: keyword
-          description: >
-
+          description: ""
         - name: minimum
           type: long
-          description: >
-
+          description: ""
         - name: module_idx
           type: keyword
-          description: >
-
+          description: ""
         - name: name
           type: keyword
-          description: >
-
+          description: ""
         - name: new_status
           type: keyword
-          description: >
-
+          description: ""
         - name: old_status
           type: keyword
-          description: >
-
+          description: ""
         - name: speed_idx_status
           type: keyword
-          description: >
-
+          description: ""
         - name: speedval
           type: long
-          description: >
-
+          description: ""
         - name: tray_index
           type: long
-          description: >
-
+          description: ""
         - name: air_flow_direction
           type: keyword
-          description: >
-
+          description: ""
         - name: zone_idx
           type: keyword
-          description: >
-
+          description: ""
     - name: firmware
       type: group
       fields:
         - name: dnld_type
           type: keyword
-          description: >
-
+          description: ""
         - name: image_profile
           type: keyword
-          description: >
-
+          description: ""
     - name: hardware
       type: group
       fields:
         - name: addr
           type: keyword
-          description: >
-
+          description: ""
         - name: bus
           type: keyword
-          description: >
-
+          description: ""
         - name: cap
           type: keyword
-          description: >
-
+          description: ""
         - name: channel
           type: keyword
-          description: >
-
+          description: ""
         - name: cpus
           type: long
-          description: >
-
+          description: ""
         - name: device
           type: keyword
-          description: >
-
+          description: ""
         - name: function
           type: keyword
-          description: >
-
+          description: ""
         - name: ip
           type: ip
-          description: >
-
+          description: ""
         - name: level
           type: keyword
-          description: >
-
+          description: ""
         - name: location
           type: keyword
-          description: >
-
+          description: ""
         - name: mcgstatus
           type: keyword
-          description: >
-
+          description: ""
         - name: misc
           type: keyword
-          description: >
-
+          description: ""
         - name: offlined
           type: long
-          description: >
-
+          description: ""
         - name: origin
           type: keyword
-          description: >
-
+          description: ""
         - name: page
           type: keyword
-          description: >
-
+          description: ""
         - name: seg
           type: keyword
-          description: >
-
+          description: ""
         - name: socket
           type: keyword
-          description: >
-
+          description: ""
         - name: test_name
           type: keyword
-          description: >
-
+          description: ""
         - name: type
           type: keyword
-          description: >
-
+          description: ""
         - name: vni
           type: keyword
-          description: >
-
+          description: ""
     - name: instance
       type: group
       fields:
         - name: id
           type: keyword
-          description: >
-
+          description: ""
     - name: ip_sla
       type: group
       fields:
         - name: name
           type: keyword
-          description: >
-
+          description: ""
     - name: l3
       type: group
       fields:
         - name: encaps_allocated
           type: keyword
-          description: >
-
+          description: ""
         - name: encaps_free
           type: keyword
-          description: >
-
+          description: ""
     - name: lacp
       type: group
       fields:
         - name: actor_state
           type: keyword
-          description: >
-
+          description: ""
         - name: fallback
           type: keyword
-          description: >
-
+          description: ""
         - name: fsm_state
           type: keyword
-          description: >
-
+          description: ""
         - name: lacp_fallback_mode
           type: keyword
-          description: >
-
+          description: ""
         - name: lacp_mode
           type: keyword
-          description: >
-
+          description: ""
         - name: lacp_rate
           type: long
-          description: >
-
+          description: ""
         - name: lag_number
           type: long
-          description: >
-
+          description: ""
         - name: lag_speed
           type: long
-          description: >
-
+          description: ""
         - name: mode
           type: keyword
-          description: >
-
+          description: ""
         - name: partner_state
           type: keyword
-          description: >
-
+          description: ""
         - name: partner_sys_id
           type: long
-          description: >
-
+          description: ""
         - name: port_speed
           type: long
-          description: >
-
+          description: ""
         - name: system_id
           type: long
-          description: >
-
+          description: ""
         - name: system_priority
           type: keyword
-          description: >
-
+          description: ""
     - name: lag
       type: group
       fields:
         - name: actor_state
           type: keyword
-          description: >
-
+          description: ""
         - name: fallback
           type: keyword
-          description: >
-
+          description: ""
         - name: fsm_state
           type: keyword
-          description: >
-
+          description: ""
         - name: lacp_fallback_mode
           type: keyword
-          description: >
-
+          description: ""
         - name: lacp_mode
           type: keyword
-          description: >
-
+          description: ""
         - name: lacp_rate
           type: long
-          description: >
-
+          description: ""
         - name: lag_number
           type: long
-          description: >
-
+          description: ""
         - name: lag_speed
           type: long
-          description: >
-
+          description: ""
         - name: mode
           type: keyword
-          description: >
-
+          description: ""
         - name: partner_state
           type: keyword
-          description: >
-
+          description: ""
         - name: partner_sys_id
           type: long
-          description: >
-
+          description: ""
         - name: port_speed
           type: long
-          description: >
-
+          description: ""
         - name: system_id
           type: long
-          description: >
-
+          description: ""
         - name: system_priority
           type: keyword
-          description: >
-
+          description: ""
     - name: lldp
       type: group
       fields:
         - name: ninterface
           type: keyword
-          description: >
-
+          description: ""
         - name: npvid
           type: long
-          description: >
-
+          description: ""
         - name: reinit_delay
           type: long
-          description: >
-
+          description: ""
         - name: tx_delay
           type: long
-          description: >
-
+          description: ""
         - name: tx_hold
           type: long
-          description: >
-
+          description: ""
         - name: tx_timer
           type: long
-          description: >
-
+          description: ""
     - name: loop
       type: group
       fields:
         - name: rx_port
           type: long
-          description: >
-          
+          description: ""
         - name: tx_port
           type: long
-          description: >
-          
+          description: ""
     - name: mac
       type: group
       fields:
         - name: ckn
           type: keyword
-          description: >
-          
+          description: ""
         - name: latest_an
           type: keyword
-          description: >
-          
+          description: ""
         - name: latest_kn
           type: keyword
-          description: >
-          
+          description: ""
         - name: new_mode
           type: keyword
-          description: >
-          
+          description: ""
         - name: old_an
           type: keyword
-          description: >
-          
+          description: ""
         - name: old_kn
           type: keyword
-          description: >
-          
+          description: ""
         - name: old_mode
           type: keyword
-          description: >
-          
+          description: ""
         - name: sci
           type: keyword
-          description: >
-          
+          description: ""
     - name: management
       type: group
       fields:
         - name: config_param
           type: keyword
-          description: >
-          
+          description: ""
     - name: mgmd
       type: group
       fields:
         - name: l3Port
           type: long
-          description: >
-          
+          description: ""
         - name: pkt_type
           type: keyword
-          description: >
-          
+          description: ""
     - name: mstp
       type: group
       fields:
         - name: psc
           type: keyword
-          description: >
-
+          description: ""
     - name: len
       type: long
-      description: >
-
+      description: ""
     - name: limit
       type: long
-      description: >
-          
+      description: ""
     - name: mstp
       type: group
       fields:
         - name: config_parameter
           type: keyword
-          description: >
-          
+          description: ""
         - name: config_value
           type: keyword
-          description: >
-          
+          description: ""
         - name: new_mode
           type: keyword
-          description: >
-          
+          description: ""
         - name: old_mac
           type: keyword
-          description: >
-          
+          description: ""
         - name: old_mode
           type: keyword
-          description: >
-          
+          description: ""
         - name: old_priority
           type: keyword
-          description: >
-          
+          description: ""
         - name: pk_type
           type: keyword
-          description: >
-          
+          description: ""
         - name: proto
           type: keyword
-          description: >
-          
+          description: ""
         - name: reconfig_parameter
           type: keyword
-          description: >
-
+          description: ""
     - name: mtu
       type: keyword
-      description: >
-
+      description: ""
     - name: nae
       type: group
       fields:
         - name: action_type
           type: keyword
-          description: >
-          
+          description: ""
         - name: condition
           type: keyword
-          description: >
-          
+          description: ""
         - name: description
           type: keyword
-          description: >
-          
+          description: ""
         - name: monitorName
           type: keyword
-          description: >
-          
+          description: ""
     - name: nd
       type: group
       fields:
         - name: type
           type: keyword
-          description: >
-          
+          description: ""
     - name: ndm
       type: group
       fields:
         - name: new_mac
           type: keyword
-          description: >
-          
+          description: ""
         - name: old_mac
           type: keyword
-          description: >
-          
+          description: ""
         - name: role1
           type: keyword
-          description: >
-          
+          description: ""
         - name: role2
           type: keyword
-          description: >
-          
+          description: ""
     - name: prefix
       type: keyword
-      description: >
-          
+      description: ""
     - name: server
       type: group
       fields:
         - name: sessions
           type: keyword
-          description: >
-          
+          description: ""
         - name: timeout
           type: long
-          description: >
-          
+          description: ""
     - name: slot
       type: long
-      description: >
-          
+      description: ""
     - name: status
       type: keyword
-      description: >
-          
+      description: ""
     - name: storage
       type: group
       fields:
         - name: name
           type: keyword
-          description: >
-          
+          description: ""
         - name: usage
           type: keyword
-          description: >
-          
+          description: ""
     - name: system
       type: group
       fields:
         - name: devicespec
           type: keyword
-          description: >
-          
+          description: ""
         - name: modspec
           type: keyword
-          description: >
-          
+          description: ""
         - name: numdevs
           type: long
-          description: >
-          
+          description: ""
         - name: time
           type: date
-          description: >
-          
+          description: ""
     - name: tunnel
       type: group
       fields:
         - name: ttl
           type: keyword
-          description: >
-          
+          description: ""
         - name: type
           type: keyword
-          description: >
-          
+          description: ""
     - name: vrf
       type: group
       fields:
         - name: id
           type: keyword
-          description: >
-          
+          description: ""
         - name: name
           type: keyword
-          description: >
-          
+          description: ""
     - name: zero_touch
       type: group
       fields:
         - name: central_location
           type: keyword
-          description: >
-
+          description: ""
         - name: http_proxy_location
           type: keyword
-          description: >
-
+          description: ""
         - name: image_file
           type: keyword

@@ -76,4 +76,3 @@
   name: user.id
 - external: ecs
   name: user.name
-  
