@@ -1,6 +1,6 @@
 # HPE Aruba CX Integration
 
-The HPE Aruba CX integration allows you to monitor the HPE Aruba Networking CX Switching. The switch series is modern, flexible, and intelligent stackable switch series ideally for enterprise network access, aggregation, core, and data center top of rack (ToR) deployments.
+The HPE Aruba CX integration allows you to monitor the HPE Aruba Networking CX Switch. The switch series is modern, flexible, and intelligent stackable switch series ideally for enterprise network access, aggregation, core, and data center top of rack (ToR) deployments.
 
 Use the HPE Aruba integration and follow the setup steps listed below to forward the CX Switch logging to a deployed standalone or managed Beat at a specific port listening for TCP or UDP data. Then visualize that data in Kibana, create alerts to notify you if something goes wrong, and reference `log` when troubleshooting data/error issue encountered in the field.
 
@@ -42,7 +42,7 @@ To Be Removed
 Note: Field types are defined within `fields.yml`
 Note: Descriptions have not been filled out
 
-#### [AAA events](https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-8214/Content/events/AAA.htm)
+#### [AAA events (Aruba Docs)](https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-8214/Content/events/AAA.htm)
 | Field                        | Description | Type | Common                       |
 |------------------------------|-------------|------|------------------------------|
 | aruba.aaa.config_event       |             |      | event.code                   |
@@ -1298,6 +1298,8 @@ The `log` dataset collects the HPE Aruba CX logs.
 | aruba.cm.days |  | long |
 | aruba.cm.est_name |  | keyword |
 | aruba.cm.profile_name |  | keyword |
+| aruba.component.category |  | keyword |
+| aruba.component.name |  | keyword |
 | aruba.config.type |  | keyword |
 | aruba.config.value |  | keyword |
 | aruba.copp.class |  | keyword |
@@ -1432,6 +1434,7 @@ The `log` dataset collects the HPE Aruba CX logs.
 | aruba.ndm.role1 |  | keyword |
 | aruba.ndm.role2 |  | keyword |
 | aruba.prefix |  | keyword |
+| aruba.sequence |  | keyword |
 | aruba.server.sessions |  | keyword |
 | aruba.server.timeout |  | long |
 | aruba.slot |  | long |
@@ -1462,13 +1465,24 @@ The `log` dataset collects the HPE Aruba CX logs.
 | error.code | Error code describing the error. | keyword |
 | error.message | Error message. | match_only_text |
 | event.action | The action captured by the event. This describes the information in the event. It is more specific than `event.category`. Examples are `group-add`, `process-started`, `file-created`. The value is normally defined by the implementer. | keyword |
+| event.category | This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy. `event.category` represents the "big buckets" of ECS categories. For example, filtering on `event.category:process` yields all events relating to process activity. This field is closely related to `event.type`, which is used as a subcategory. This field is an array. This will allow proper categorization of some events that fall in multiple categories. | keyword |
 | event.code | Identification code for this event, if one exists. Some event sources use event codes to identify messages unambiguously, regardless of message language or wording adjustments over time. An example of this is the Windows Event ID. | keyword |
 | event.end | `event.end` contains the date when the event ended or when the activity was last observed. | date |
+| event.id | Unique ID to describe the event. | keyword |
 | event.kind | This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy. `event.kind` gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events. The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data is coming in at a regular interval or not. | keyword |
 | event.reason | Reason why this event happened, according to the source. This describes the why of a particular action or outcome captured in the event. Where `event.action` captures the action from the event, `event.reason` describes why that action was taken. For example, a web proxy with an `event.action` which denied the request may also populate `event.reason` with the reason why (e.g. `blocked site`). | keyword |
+| event.sequence | Sequence number of the event. The sequence number is a value published by some event sources, to make the exact ordering of events unambiguous, regardless of the timestamp precision. | long |
 | event.type | This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy. `event.type` represents a categorization "sub-bucket" that, when used along with the `event.category` field values, enables filtering events down to a level appropriate for single visualization. This field is an array. This will allow proper categorization of some events that fall in multiple event types. | keyword |
 | file.name | Name of the file including the extension, without the directory. | keyword |
 | host.name | Name of the host. It can contain what hostname returns on Unix systems, the fully qualified domain name (FQDN), or a name specified by the user. The recommended value is the lowercase FQDN of the host. | keyword |
+| input.type | Input type | keyword |
+| log.file.device_id | Device Id of the log file this event came from. | keyword |
+| log.file.inode | Inode of the log file this event came from. | keyword |
+| log.level | Original log level of the log event. If the source of the event provides a log level or textual severity, this is the one that goes in `log.level`. If your source doesn't specify one, you may put your event transport's severity here (e.g. Syslog severity). Some examples are `warn`, `err`, `i`, `informational`. | keyword |
+| log.offset | Offset of the entry in the log file. | long |
+| log.origin.file.line | The line number of the file containing the source code which originated the log event. | long |
+| log.origin.file.name | The name of the file containing the source code which originated the log event. Note that this field is not meant to capture the log file. The correct field to capture the log file is `log.file.path`. | keyword |
+| log.source.address | Source address from which the log event was read / sent from. | keyword |
 | log.syslog.severity.name | The Syslog numeric severity of the log event, if available. If the event source publishing via Syslog provides a different severity value (e.g. firewall, IDS), your source's text severity should go to `log.level`. If the event source does not specify a distinct severity, you can optionally copy the Syslog severity to `log.level`. | keyword |
 | message | For log events the message field contains the log message, optimized for viewing in a log viewer. For structured logs without an original message field, other fields can be concatenated to form a human-readable summary of the event. If multiple messages exist, they can be combined into one message. | match_only_text |
 | network.direction | Direction of the network traffic. When mapping events from a host-based monitoring context, populate this field from the host's point of view, using the values "ingress" or "egress". When mapping events from a network or perimeter-based monitoring context, populate this field from the point of view of the network perimeter, using the values "inbound", "outbound", "internal" or "external". Note that "internal" is not crossing perimeter boundaries, and is meant to describe communication between two hosts within the perimeter. Note also that "external" is meant to describe traffic between two hosts that are external to the perimeter. This could for example be useful for ISPs or VPN service providers. | keyword |

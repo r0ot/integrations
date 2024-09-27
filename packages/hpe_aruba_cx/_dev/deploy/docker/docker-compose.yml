@@ -1,4 +1,3 @@
-version: '2.3'
 services:
   aruba-filestream:
     image: alpine
@@ -10,12 +9,12 @@ services:
     image: docker.elastic.co/observability/stream:v0.15.0
     volumes:
       - ./sample_logs:/sample_logs:ro
-    command: log --start-signal=SIGHUP --delay=5s --addr elastic-agent:1470 -p=tcp /sample_logs/*.log
+    command: log --start-signal=SIGHUP --delay=5s --addr elastic-agent:9515 -p=tcp /sample_logs/*.log
   aruba-tls:
     image: docker.elastic.co/observability/stream:v0.15.0
     volumes:
       - ./sample_logs:/sample_logs:ro
-    command: log --start-signal=SIGHUP --delay=5s --addr elastic-agent:1470 -p=tls --insecure /sample_logs/*.log
+    command: log --start-signal=SIGHUP --delay=5s --addr elastic-agent:9514 -p=tls --insecure /sample_logs/*.log
   aruba-udp:
     image: docker.elastic.co/observability/stream:v0.15.0
     volumes:

@@ -1,6 +1,6 @@
 # HPE Aruba CX Integration
 
-The HPE Aruba CX integration allows you to monitor the HPE Aruba Networking CX Switching. The switch series is modern, flexible, and intelligent stackable switch series ideally for enterprise network access, aggregation, core, and data center top of rack (ToR) deployments.
+The HPE Aruba CX integration allows you to monitor the HPE Aruba Networking CX Switch. The switch series is modern, flexible, and intelligent stackable switch series ideally for enterprise network access, aggregation, core, and data center top of rack (ToR) deployments.
 
 Use the HPE Aruba integration and follow the setup steps listed below to forward the CX Switch logging to a deployed standalone or managed Beat at a specific port listening for TCP or UDP data. Then visualize that data in Kibana, create alerts to notify you if something goes wrong, and reference `log` when troubleshooting data/error issue encountered in the field.
 
@@ -42,7 +42,7 @@ To Be Removed
 Note: Field types are defined within `fields.yml`
 Note: Descriptions have not been filled out
 
-#### [AAA events](https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-8214/Content/events/AAA.htm)
+#### [AAA events (Aruba Docs)](https://www.arubanetworks.com/techdocs/AOS-CX/10.07/HTML/5200-8214/Content/events/AAA.htm)
 | Field                        | Description | Type | Common                       |
 |------------------------------|-------------|------|------------------------------|
 | aruba.aaa.config_event       |             |      | event.code                   |

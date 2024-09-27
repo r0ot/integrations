@@ -83,6 +83,15 @@
         - name: profile_name
           type: keyword
           description: ""
+    - name: component
+      type: group
+      fields:
+        - name: name
+          type: keyword
+          description: ""
+        - name: category
+          type: keyword
+          description: ""
     - name: config
       type: group
       fields:
@@ -564,6 +573,9 @@
           type: keyword
           description: ""
     - name: prefix
+      type: keyword
+      description: ""
+    - name: sequence
       type: keyword
       description: ""
     - name: server
