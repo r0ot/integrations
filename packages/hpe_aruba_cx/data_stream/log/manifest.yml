@@ -29,7 +29,7 @@ streams:
         required: true
         show_user: false
         default:
-          - aruba-cx-log
+          - hpe-aruba-cx
           - forwarded
       - name: preserve_original_event
         required: true
@@ -84,9 +84,9 @@ streams:
         required: false
         show_user: false
         default: |
-          framing: rfc6587
-          #max_message_size: 50KiB
           #max_connections: 1
+          #framing: delimiter
+          #line_delimiter: "\n"
         description: Specify custom configuration options for the TCP input.
   - input: udp
     title: Aruba CX logs (udp)

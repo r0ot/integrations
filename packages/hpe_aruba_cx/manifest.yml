@@ -24,7 +24,7 @@ icons:
     size: 800x800
     type: image/svg+xml
 policy_templates:
-  - name: log
+  - name: hpe_aruba_cx
     title: HPE Aruba CX logs
     description: Collect HPE Aruba CX logs
     inputs:
